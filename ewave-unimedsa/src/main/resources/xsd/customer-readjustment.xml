@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:readjustments xmlns:tns="http://www.unimedsa.com.br/customer/readjustment"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.unimedsa.com.br/customer/readjustment customer-readjustment.xsd ">
+	<tns:readjustment>
+		<tns:contact>
+			<tns:name>Adriana</tns:name>
+			<tns:phone>3471-3027</tns:phone>
+			<tns:email>adriana.martins@unimedsa.com.br</tns:email>
+		</tns:contact>
+		<tns:customer>
+			<tns:name>João Amaral</tns:name>
+			<tns:streetName>Avenida Paulista</tns:streetName>
+			<tns:streetNumber>340</tns:streetNumber>
+			<tns:neighborhood>Centro</tns:neighborhood>
+			<tns:city>São Paulo</tns:city>
+			<tns:cep>44000-850</tns:cep>
+		</tns:customer>
+		<tns:value>1,4%</tns:value>
+		<tns:date>2001-03-01</tns:date>
+		<tns:printingDate>2001-02-01</tns:printingDate>
+	</tns:readjustment>
+	<tns:readjustment>
+		<tns:contact>
+			<tns:name>Adriana</tns:name>
+			<tns:phone>3471-3027</tns:phone>
+			<tns:email>adriana.martins@unimedsa.com.br</tns:email>
+		</tns:contact>
+		<tns:customer>
+			<tns:name>Antônio da Silva</tns:name>
+			<tns:streetName>Avenida Marechal Deodoro</tns:streetName>
+			<tns:streetNumber>1233</tns:streetNumber>
+			<tns:neighborhood>Cristo Rei</tns:neighborhood>
+			<tns:city>Curitiba</tns:city>
+			<tns:cep>88000-850</tns:cep>
+		</tns:customer>
+		<tns:value>3%</tns:value>
+		<tns:date>2012-11-20</tns:date>
+		<tns:printingDate>2001-10-01</tns:printingDate>
+	</tns:readjustment>
+	<tns:readjustment>
+		<tns:contact>
+			<tns:name>Adriana</tns:name>
+			<tns:phone>3471-3027</tns:phone>
+			<tns:email>adriana.martins@unimedsa.com.br</tns:email>
+		</tns:contact>
+		<tns:customer>
+			<tns:name>José Almeida Silva</tns:name>
+			<tns:streetName>Avenida 23 de Maio</tns:streetName>
+			<tns:streetNumber>584</tns:streetNumber>
+			<tns:neighborhood>Chácara Flora</tns:neighborhood>
+			<tns:city>São Paulo</tns:city>
+			<tns:cep>48022-450</tns:cep>
+		</tns:customer>
+		<tns:value>2,8%</tns:value>
+		<tns:date>2012-11-15</tns:date>
+		<tns:printingDate>2001-10-15</tns:printingDate>
+	</tns:readjustment>
+	<tns:readjustment>
+		<tns:contact>
+			<tns:name>Adriana</tns:name>
+			<tns:phone>3471-3027</tns:phone>
+			<tns:email>adriana.martins@unimedsa.com.br</tns:email>
+		</tns:contact>
+		<tns:customer>
+			<tns:name>Luiz Nicodemo</tns:name>
+			<tns:streetName>Avenida 23 de Maio</tns:streetName>
+			<tns:streetNumber>584</tns:streetNumber>
+			<tns:neighborhood>Chácara Flora</tns:neighborhood>
+			<tns:city>São Paulo</tns:city>
+			<tns:cep>48022-450</tns:cep>
+		</tns:customer>
+		<tns:value>2,8%</tns:value>
+		<tns:date>2012-08-07</tns:date>
+		<tns:printingDate>2001-07-07</tns:printingDate>
+	</tns:readjustment>	
+</tns:readjustments>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.unimedsa.com.br/customer/readjustment" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.unimedsa.com.br/customer/readjustment">
+
+    <complexType name="readjustment">
+    	<sequence>
+			<element name="contact" type="tns:contact"></element>
+    		<element name="customer" type="tns:customer"></element>
+    		<element name="value" type="string"></element>
+    		<element name="date" type="date"></element>
+    		<element name="printingDate" type="date"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="customer">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="streetName" type="string"></element>
+    		<element name="streetNumber" type="string"></element>
+    		<element name="neighborhood" type="string"></element>
+    		<element name="city" type="string"></element>
+    		<element name="cep" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="contact">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="phone" type="string"></element>
+    		<element name="email" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="readjustments" type="tns:readjustments"></element>
+
+    <complexType name="readjustments">
+    	<sequence>
+    		<element name="readjustment" type="tns:readjustment" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

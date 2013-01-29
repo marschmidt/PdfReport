@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="36" rightMargin="14" topMargin="0" bottomMargin="0" uuid="ac0992f7-4494-450d-9b39-f053c54292c0">
+	<property name="ireport.zoom" value="1.6963904734899393"/>
+	<property name="ireport.x" value="212"/>
+	<property name="ireport.y" value="413"/>
+	<style name="Default Text" isDefault="true" fill="Solid" hAlign="Justified" vAlign="Top" markup="html" fontName="Calibri" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+	<parameter name="XML_NAMESPACE_MAP" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="DOCUMENT_BUILDER_FACTORY" class="java.lang.Object" isForPrompting="false"/>
+	<queryString language="xPath">
+		<![CDATA[/tns:readjustments/tns:readjustment]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:customer/tns:name]]></fieldDescription>
+	</field>
+	<field name="STREET_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:customer/tns:streetName]]></fieldDescription>
+	</field>
+	<field name="STREET_NUMBER" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[tns:customer/tns:streetNumber]]></fieldDescription>
+	</field>
+	<field name="NEIGHBORHOOD_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:customer/tns:neighborhood]]></fieldDescription>
+	</field>
+	<field name="CITY" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:customer/tns:city]]></fieldDescription>
+	</field>
+	<field name="CEP" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:customer/tns:cep]]></fieldDescription>
+	</field>
+	<field name="CONTACT_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:contact/tns:name]]></fieldDescription>
+	</field>
+	<field name="CONTACT_PHONE" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:contact/tns:phone]]></fieldDescription>
+	</field>
+	<field name="CONTACT_EMAIL_ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:contact/tns:email]]></fieldDescription>
+	</field>
+	<field name="VALUE" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:value]]></fieldDescription>
+	</field>
+	<field name="READJUSTMENT_DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:date]]></fieldDescription>
+	</field>
+	<field name="PRINTING_DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[tns:printingDate]]></fieldDescription>
+	</field>
+	<variable name="PRINT_DATE" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<image scaleImage="RetainShape">
+				<reportElement uuid="00df5bcc-9bf3-49a6-a11d-058d5d2a118a" x="0" y="34" width="98" height="15"/>
+				<imageExpression><![CDATA["report-xml-datasource/images/cabecalho1.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="bd0b0fab-3cc8-4907-8948-6eaa45afd751" x="419" y="16" width="109" height="41"/>
+				<imageExpression><![CDATA["report-xml-datasource/images/cabecalho2.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="729" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy" isBlankWhenNull="true">
+				<reportElement uuid="23d29eb9-d310-4f80-ae70-1df2f7614e04" style="Default Text" x="0" y="0" width="318" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Americana, " + new java.text.SimpleDateFormat("dd MMMMM 'de' yyyy", new java.util.Locale("pt", "BR")).format(  new java.text.SimpleDateFormat("yyyy-MM-dd").parse(  $F{PRINTING_DATE}  ) )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="37531d50-2f50-418d-8151-0fd677eb57e1" style="Default Text" x="318" y="0" width="205" height="13"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REAJUSTE - " + new java.text.SimpleDateFormat("MM/yyyy").format( new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{READJUSTMENT_DATE}))]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="1b5766fa-4eed-4750-8e15-3a73da3b1748" x="239" y="637" width="45" height="48"/>
+				<imageExpression><![CDATA["report-xml-datasource/images/assinatura.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8ad8ff54-3b33-4a0f-b4f9-ae4432d8d7b3" x="0" y="673" width="523" height="19"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["<b>Dr. Rafael Moliterno Neto</b><br/><b>Presidente</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="049f3f2f-5c30-4231-b85f-804638cf9a88" style="Default Text" positionType="Float" x="0" y="13" width="523" height="198"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["<br/><b>" + $F{NAME} + "</b><br/>" + $F{STREET_NAME} + ", " + $F{STREET_NUMBER} + "<br/>" + $F{NEIGHBORHOOD_NAME} + " " + $F{CITY} + "<br/>" + "CEP " + $F{CEP} + "<br/><br/>Prezado  cliente,<br/><br/>" + "O mercado de saúde vem freqüentemente sofrendo fortes intervenções da Agência Nacional de Saúde obrigando que todas as operadoras a nível Brasil constituam reservas financeiras acima dos patamares entendidos por especialistas do mercado. Em julho de 2011, a Agência Nacional de Saúde, mais uma vez, deu provas desta ação publicando a Instrução Normativa 47, onde determinou a exclusão de forma retroativa dos valores reservados feitos pela reavaliação de imobilizado solicitado pela própria Agência em 2009." + "<br/><br/>Mesmo assim, há 18 anos consecutivos, a marca Unimed é Top Of Mind - a mais lembrada -, de acordo com o Instituto Datafolha. É também o plano de saúde em que os brasileiros mais confiam, pela nona vez seguida, na pesquisa Marcas de Confiança, realizada pela Revista Seleções e Ibope. E nas cidades de Santa Bárbara d’Oeste, Americana e Nova Odessa, a Unimed ultrapassou o índice de 85% de satisfação entre os clientes. Esses resultados mostram que, na Unimed, a sua empresa está em boas mãos, podendo contar com a operadora de saúde mais reconhecida pelo mercado." + "<br/><br/>Para continuar oferecendo a melhor assistência médica e assegurar a permanência no setor, a Unimed adota uma gestão responsável de seus contratos. O objetivo é garantir o equilíbrio e a manutenção de cada um deles, tendo como critério para os reajustes anuais a avaliação do histórico da empresa-cliente durante os últimos 12 meses e a projeção de um custo para os próximos 12." +  "<br/><br/>Nesse momento, o relacionamento entre a <b>Unimed</b> e a <b>" + $F{NAME} + "</b> está  completando mais um ano, período em que acordamos analisar o desempenho desse contrato e decidir qual será o prêmio adequado para atender às necessidades de sua empresa, mantendo a qualidade dos serviços prestados. Assim, consideramos os seguintes fatores:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement uuid="e14b0b7e-d591-4a8c-9685-6269c4fcf131" style="Default Text" positionType="Float" x="0" y="230" width="523" height="69"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<br>Com base nas informações levantadas, verificamos a necessidade de aplicar nas mensalidades de seu contrato, a partir do mês de <b>" + (new java.text.SimpleDateFormat("MMMMM", new Locale("pt", "BR")).format( new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{READJUSTMENT_DATE}))).toUpperCase() + "</b> de " + new java.text.SimpleDateFormat("yyyy", new Locale("pt", "BR")).format( new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{READJUSTMENT_DATE})) + ", o novo prêmio que será de <b>" + $F{VALUE} + "</b> por usuário na área de ação, quarto enfermaria, sendo os demais prêmios reajustados proporcionalmente a este." + "<br/><br/>Aproveitamos a oportunidade para lembrar que, com a Unimed, sua empresa desfruta da tranquilidade de ter um plano de saúde assistencial com cobertura nacional para urgências e emergências, além de uma rede de atendimento local ampla e diferenciada." + "<br/><br/>Agradecemos a preferência demonstrada e mantemos a expectativa de fortalecer ainda mais nossa parceria." + "<br/>Esclarecimento de dúvidas falar com <b>" + $F{CONTACT_NAME} + " - fone " + $F{CONTACT_PHONE} + " ou e-mail: " + $F{CONTACT_EMAIL_ADDRESS} + "</b><br/><br/>Atenciosamente,"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9dfedfac-f6c1-4246-af4e-436a46ef6f4f" style="Default Text" positionType="Float" x="57" y="211" width="466" height="19"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["<ul><li><b>Novas coberturas:</b> A partir de Janeiro/2012, a Agência Nacional de Saúde incluiu no rol de cobertura 66 novos procedimentos;</li><li><b>Dados contratuais:</b> Valor do prêmio; incidência de casos de alto custo; variação da utilização dos serviços, do número de usuários e da faixa etária dos beneficiários.</li><li><b>Fatores próprios da área da saúde:</b> Custos hospitalares e dos investimentos em tecnologia para exames complementares, que historicamente aumentam acima da inflação.</li><li><b>Metas de segurança, rentabilidade e liquidez impostas ao setor:</b> As reservas financeiras exigidas pela ANS (Agência Nacional de Saúde Suplementar) estão sendo constituídas rigorosamente em dia. Isso garante que os recursos da Unimed sejam proporcionais aos riscos assumidos contratualmente, de forma a preservar o atendimento da operadora em curto, médio e longo prazo, mesmo no caso de oscilações na carteira.</li></ul>"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="252f2dbd-eae6-46d4-acf3-277e30b7da3b" x="537" y="100" width="8" height="54"/>
+				<imageExpression><![CDATA["report-xml-datasource/images/ans.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement uuid="6a6f9226-182f-47ac-8e65-be7bade2daaa" x="0" y="0" width="523" height="50"/>
+				<imageExpression><![CDATA["report-xml-datasource/images/rodape.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

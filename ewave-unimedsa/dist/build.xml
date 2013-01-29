@@ -1,0 +1,20 @@
+<project name="Unimed SA Readjusment Report" default="run" basedir=".">
+
+	<property name="library.dir" value="${basedir}/libs"/>
+	
+	<property name="xml.source" value="${basedir}/../src/main/resources/xsd/customer-readjustment.xml"/>
+
+	<path id="classpath">
+		<fileset dir="${library.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="run">
+		<echo message="${xml.source}"/>
+		<java classname="br.com.unimedsa.readjustment.report.Main" args="-source ${xml.source}">
+			<classpath refid="classpath"/>
+		</java>
+	</target>
+	
+</project>
